@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="400">
+<line x1="0" y1="200" x2="600" y2="200" stroke="rgb(100, 100, 100)" stroke-width="3"/>
+<line x1="300" y1="0" x2="300" y2="400" stroke="rgb(100, 100, 100)" stroke-width="3"/>
+<text x="-4" y="198" text-anchor="middle" fill="black">-10</text>
+<text x="26" y="198" text-anchor="middle" fill="black">-9</text>
+<text x="56" y="198" text-anchor="middle" fill="black">-8</text>
+<text x="86" y="198" text-anchor="middle" fill="black">-7</text>
+<text x="116" y="198" text-anchor="middle" fill="black">-6</text>
+<text x="146" y="198" text-anchor="middle" fill="black">-5</text>
+<text x="176" y="198" text-anchor="middle" fill="black">-4</text>
+<text x="206" y="198" text-anchor="middle" fill="black">-3</text>
+<text x="236" y="198" text-anchor="middle" fill="black">-2</text>
+<text x="266" y="198" text-anchor="middle" fill="black">-1</text>
+<text x="326" y="198" text-anchor="middle" fill="black">1</text>
+<text x="356" y="198" text-anchor="middle" fill="black">2</text>
+<text x="386" y="198" text-anchor="middle" fill="black">3</text>
+<text x="416" y="198" text-anchor="middle" fill="black">4</text>
+<text x="446" y="198" text-anchor="middle" fill="black">5</text>
+<text x="476" y="198" text-anchor="middle" fill="black">6</text>
+<text x="506" y="198" text-anchor="middle" fill="black">7</text>
+<text x="536" y="198" text-anchor="middle" fill="black">8</text>
+<text x="566" y="198" text-anchor="middle" fill="black">9</text>
+<text x="596" y="198" text-anchor="middle" fill="black">10</text>
+<text x="302" y="405" fill="black">-7</text>
+<text x="302" y="376" fill="black">-6</text>
+<text x="302" y="348" fill="black">-5</text>
+<text x="302" y="319" fill="black">-4</text>
+<text x="302" y="291" fill="black">-3</text>
+<text x="302" y="262" fill="black">-2</text>
+<text x="302" y="234" fill="black">-1</text>
+<text x="302" y="176" fill="black">1</text>
+<text x="302" y="148" fill="black">2</text>
+<text x="302" y="119" fill="black">3</text>
+<text x="302" y="91" fill="black">4</text>
+<text x="302" y="62" fill="black">5</text>
+<text x="302" y="34" fill="black">6</text>
+<text x="302" y="5" fill="black">7</text>
+<text x="302" y="198" fill="black">0</text>
+<defs>
+<clipPath id="myClip">
+<rect x="0" y="0" width="600" height="400"/>
+</clipPath>
+</defs>
+<text x="598" y="20" text-anchor="end" font-size="18" fill="rgb(183, 86, 177)">y = sin x</text>
+<path clip-path="url(#myClip)" d="M -29.867229 171.428571 C 4.458984,171.428571 30.054339,228.571429 64.380551,228.571429" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 64.380551 228.571429 C 98.706763,228.571429 124.302118,171.428571 158.628331,171.428571" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 158.628331 171.428571 C 192.954543,171.428571 218.549898,228.571429 252.876110,228.571429" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 252.876110 228.571429 C 287.202322,228.571429 312.797678,171.428571 347.123890,171.428571" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 347.123890 171.428571 C 381.450102,171.428571 407.045457,228.571429 441.371669,228.571429" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 441.371669 228.571429 C 475.697882,228.571429 501.293237,171.428571 535.619449,171.428571" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 535.619449 171.428571 C 569.945661,171.428571 595.541016,228.571429 629.867229,228.571429" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
+<text x="598" y="40" text-anchor="end" font-size="18" fill="rgb(115, 193, 135)">y = x + 5</text>
+<line clip-path="url(#myClip)" x1="0" y1="343" x2="600" y2="-229" fill="transparent" stroke="rgb(115, 193, 135)" stroke-width="1"/>
+<text x="598" y="60" text-anchor="end" font-size="18" fill="rgb(186, 92, 49)">y = -0.1 x</text>
+<line clip-path="url(#myClip)" x1="0" y1="171" x2="600" y2="229" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+</svg>
