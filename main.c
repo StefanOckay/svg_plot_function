@@ -1,4 +1,7 @@
 #include "svggraph.h"
+#include "svggraph_table.h"
+#include "svggraph_write.h"
+#include "svggraph_input.h"
 
 
 int main(int argc, char *argv[])
@@ -45,6 +48,10 @@ int main(int argc, char *argv[])
     int function_counter = 0;
     struct graph_color graph_color;
     double *a = calloc(1, sizeof(double)); // graph coefficient
+    if (a == NULL) {
+        fprintf(stderr, "Couldn't allocate memory. Exitting.\n");
+        return -1;
+    }
     char user_graph_input[22];
     char a_buffer[22];
     // initialize input
