@@ -43,10 +43,10 @@
 <rect x="0" y="0" width="600" height="400"/>
 </clipPath>
 </defs>
-<text x="598" y="20" text-anchor="end" font-size="18" fill="rgb(183, 86, 177)">y = x + 0.4532</text>
-<line clip-path="url(#myClip)" x1="0" y1="473" x2="600" y2="-99" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<text x="598" y="40" text-anchor="end" font-size="18" fill="rgb(115, 193, 135)">y = -1.12 x</text>
-<line clip-path="url(#myClip)" x1="0" y1="-120" x2="600" y2="520" fill="transparent" stroke="rgb(115, 193, 135)" stroke-width="1"/>
+<text x="598" y="20" text-anchor="end" font-size="18" fill="rgb(183, 86, 177)">y = x + 1.243</text>
+<line clip-path="url(#myClip)" x1="0" y1="450" x2="600" y2="-121" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
+<text x="598" y="40" text-anchor="end" font-size="18" fill="rgb(115, 193, 135)">y = -0.1254 x</text>
+<line clip-path="url(#myClip)" x1="0" y1="163" x2="600" y2="237" fill="transparent" stroke="rgb(115, 193, 135)" stroke-width="1"/>
 <text x="598" y="60" text-anchor="end" font-size="18" fill="rgb(186, 92, 49)">y = cos x</text>
 <path clip-path="url(#myClip)" d="M -76.991118 171.428571 C -42.664906,171.428571 -17.069551,228.571429 17.256661,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
 <path clip-path="url(#myClip)" d="M 17.256661 228.571429 C 51.582873,228.571429 77.178229,171.428571 111.504441,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
