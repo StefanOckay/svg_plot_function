@@ -22,7 +22,7 @@ void cut_new_line(char *s);
  * @brief is_valid_char .. checks the validity of chars passed to float conversion from stdin
  * @param c .. the char to be checked
  * @param valid_chars .. array of valid chars
- * @return 0 if the char c is contained in the valid_chars
+ * @return 0 if the char c is contained in the valid_chars, non 0 otherwise
  */
 int is_valid_char(char c, const char *valid_chars);
 
@@ -38,7 +38,7 @@ void find_graph_type(enum graph_type *graph_type, const char *user_graph_input, 
  * @brief parse_user_input .. parses runtime user function input
  * @param graph_const .. type of a function stored in a model string to be compared with UI
  * @param user_graph_input
- * @return structure containing the parsed input and error value if invalid input was obtained
+ * @return structure containing the parsed input and error value (== 1 if invalid input was obtained)
  */
 struct Parsed_double parse_user_input(const char *graph_const, const char *user_graph_input);
 
@@ -46,6 +46,6 @@ struct Parsed_double parse_user_input(const char *graph_const, const char *user_
  * @brief parse_cml_input .. parses command line user input
  * @param graph_in_values .. storage for parsed cml values
  * @param argv .. command line string values
- * @return 0 if success, non 0 otherwise
+ * @return 0 if success, error otherwise
  */
 int parse_cml_input(int graph_in_values[4], char *argv[]);

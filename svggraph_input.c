@@ -20,7 +20,7 @@ int is_valid_char(char c, const char *valid_chars) {
         }
         i++;
     }
-    return -1;
+    return 1;
 }
 
 struct Parsed_double parse_user_input(const char *graph_const, const char *user_graph_input) {
@@ -86,10 +86,10 @@ struct Parsed_double parse_user_input(const char *graph_const, const char *user_
     }
     double a = atof(a_string); // only valid argument is expected at this point
     result.real_number = a;
-    result.error = 0;
+    result.error = SUCCESS;
     return result;
     error_return:
-        result.error = 1;
+        result.error = EINVAL;
         return result;
 }
 
@@ -128,8 +128,8 @@ int parse_cml_input(int *graph_in_values, char *argv[]) {
     for (int i = 2; i < 6; i++) {
         if ((graph_in_values[i - 2] = atoi(argv[i])) <= 0) {
             fprintf(stderr, "Invalid input value number %i: %s\n", i - 1, argv[i]);
-            return EXIT_FAILURE;
+            return EINVAL;
         }
     }
-    return 0;
+    return SUCCESS;
 }

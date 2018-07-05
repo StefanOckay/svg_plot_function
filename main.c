@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
     if (argc != 1 && argc != 6) {
         fprintf(stderr, "Wrong number of arguments. Exitting.\n");
-        return -1;
+        return EINVAL;
     }
     FILE *svg_file = NULL;
     int graph_in_values[4];
@@ -15,12 +15,12 @@ int main(int argc, char *argv[])
         svg_file = fopen(argv[1], "w");
         if (svg_file == NULL) {
             perror(argv[1]);
-            return -1;
+            return 1;
         }
         // parse command line input
-        if (parse_cml_input(graph_in_values, argv) != 0) {
+        if (parse_cml_input(graph_in_values, argv) != SUCCESS) {
             fclose(svg_file);
-            return -1;
+            return EINVAL;
         }
         // WRITING TO SVG FILE BEGIN -------------------------
         // basics
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     double *a = calloc(1, sizeof(double)); // graph coefficient
     if (a == NULL) {
         fprintf(stderr, "Couldn't allocate memory. Exitting.\n");
-        return -1;
+        return ENOMEM;
     }
     char user_graph_input[22];
     char a_buffer[22];
@@ -103,5 +103,5 @@ int main(int argc, char *argv[])
         fclose(svg_file);
     }
     // SUCCESSFULLY FINISH THE PROGRAM -------------------------
-    return 0;
+    return SUCCESS;
 }

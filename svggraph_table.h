@@ -32,7 +32,7 @@ void destroy_table(struct Table *table);
  * @param table
  * @param collun_widths
  */
-void print_horizontal_table_border(struct Table *table, size_t *collun_widths);
+void print_horizontal_table_border(struct Table *table, size_t *collumn_widths);
 
 /**
  * @brief print_table_line
@@ -40,7 +40,7 @@ void print_horizontal_table_border(struct Table *table, size_t *collun_widths);
  * @param row
  * @param collun_widths
  */
-void print_table_line(struct Table *table, unsigned char row, size_t *collun_widths);
+void print_table_line(struct Table *table, unsigned char row, size_t *collumn_widths);
 
 /**
  * @brief print_table
@@ -64,7 +64,7 @@ int assignCellI(struct Table *table, unsigned char row, unsigned char collumn, i
  * @param str
  * @return
  */
-int simplify(char *str);
+int simplify_function_str(char *str);
 
 /**
  * @brief assignCellF
@@ -92,7 +92,7 @@ int assignCellS(struct Table *table, unsigned char row, unsigned char collumn, c
  * @param parameter
  * @return
  */
-int print_table_for_function(char* function_str, double (*function)(double, double), double parameter);
+int print_table_for_function(char* function_str, double (*operation)(double, double), double a);
 
 /**
  * @brief print_to_stdout .. print the table for function values
@@ -100,7 +100,7 @@ int print_table_for_function(char* function_str, double (*function)(double, doub
  * @param parameter .. coeffiecient of the function
  * @return int value indicating (non)success
  */
-int print_to_stdout(enum graph_type type, double parameter);
+int print_to_stdout(enum graph_type type, double a);
 
 /**
  * @brief plus
@@ -108,7 +108,7 @@ int print_to_stdout(enum graph_type type, double parameter);
  * @param parameter
  * @return
  */
-double plus(double x, double parameter);
+double plus(double x, double a);
 
 /**
  * @brief minus
@@ -116,7 +116,7 @@ double plus(double x, double parameter);
  * @param parameter
  * @return
  */
-double minus(double x, double parameter);
+double minus(double x, double a);
 
 /**
  * @brief multiply
@@ -124,7 +124,7 @@ double minus(double x, double parameter);
  * @param parameter
  * @return
  */
-double multiply(double x, double parameter);
+double multiply(double x, double a);
 
 /**
  * @brief sinus
@@ -132,7 +132,7 @@ double multiply(double x, double parameter);
  * @param parameter
  * @return
  */
-double sinus(double x, double parameter);
+double sinus(double x, double a);
 
 /**
  * @brief cosinus
@@ -140,4 +140,4 @@ double sinus(double x, double parameter);
  * @param parameter
  * @return
  */
-double cosinus(double x, double parameter);
+double cosinus(double x, double a);
