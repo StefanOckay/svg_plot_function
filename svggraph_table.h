@@ -1,8 +1,7 @@
-#include <stdlib.h>
-#include <errno.h>
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
+#ifndef SVGGRAPH
+#define SVGGRAPH
+#include "svggraph.h"
+#endif
 
 
 /**

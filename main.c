@@ -1,7 +1,6 @@
-#include "svggraph.h"
-#include "svggraph_table.h"
-#include "svggraph_write.h"
 #include "svggraph_input.h"
+#include "svggraph_write.h"
+#include "svggraph_table.h"
 
 
 int main(int argc, char *argv[])
