@@ -69,7 +69,7 @@ int print_table(struct Table *table) {
         print_horizontal_table_border(table, collumn_widths);
     }
     free(collumn_widths);
-    return SUCCESS;
+    return EXIT_SUCCESS;
 }
 
 int assignCellI(struct Table *table, unsigned char row, unsigned char collumn, int value) {
@@ -83,10 +83,9 @@ int assignCellI(struct Table *table, unsigned char row, unsigned char collumn, i
     if (str == NULL) {
         return ENOMEM;
     }
-    free(table->cells[row * table->collumns + collumn]);
     strcpy(str, buffer);
     table->cells[row * table->collumns + collumn] = str;
-    return SUCCESS;
+    return EXIT_SUCCESS;
 }
 
 int assignCellF(struct Table *table, unsigned char row, unsigned char collumn, double value) {
@@ -100,14 +99,13 @@ int assignCellF(struct Table *table, unsigned char row, unsigned char collumn, d
     if (str == NULL) {
         return ENOMEM;
     }
-    free(table->cells[row * table->collumns + collumn]);
     if (value == 0) {
         strcpy(str, "0");
     } else {
         strcpy(str, buffer);
     }
     table->cells[row * table->collumns + collumn] = str;
-    return SUCCESS;
+    return EXIT_SUCCESS;
 }
 
 int assignCellS(struct Table *table, unsigned char row, unsigned char collumn, char* value) {
@@ -119,10 +117,9 @@ int assignCellS(struct Table *table, unsigned char row, unsigned char collumn, c
     if (str == NULL) {
         return ENOMEM;
     }
-    free(table->cells[row * table->collumns + collumn]);
     strcpy(str, value);
     table->cells[row * table->collumns + collumn] = str;
-    return SUCCESS;
+    return EXIT_SUCCESS;
 }
 
 int assign_table_values(struct Table *table, char *function_str, double (*operation)(double, double), double a) {
@@ -144,7 +141,7 @@ int assign_table_values(struct Table *table, char *function_str, double (*operat
             goto cleanup;
         }
     }
-    ret_code = SUCCESS;
+    ret_code = EXIT_SUCCESS;
     cleanup:
         return ret_code;
 }
@@ -152,16 +149,14 @@ int assign_table_values(struct Table *table, char *function_str, double (*operat
 int simplify_function_str(char *str) {
     int len = strlen(str);
     for(int i = len - 1; len > 0; i--) {
-        switch (str[i]) {
-        case '0':
+        if (str[i] == '0') {
+            str[i] = '\0';
+            len--;
+        } else if (str[i] == '.') {
             str[i] = '\0';
             len--;
             break;
-        case '.':
-            str[i] = '\0';
-            len--;
-            break;
-        default:
+        } else {
             break;
         }
     }
@@ -200,7 +195,7 @@ int print_to_stdout(enum graph_type type, double a) {
             fprintf(stderr, "Unknown graph type.");
             return EINVAL;
     }
-    if (ret_code == SUCCESS) {
+    if (ret_code == EXIT_SUCCESS) {
         ret_code = print_table(table);
     }
     free_table(table);

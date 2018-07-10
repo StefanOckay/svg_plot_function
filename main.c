@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
             return 1;
         }
         // parse command line input
-        if (parse_cml_input(graph_in_values, argv) != SUCCESS) {
+        if (parse_cml_input(graph_in_values, argv) != EXIT_SUCCESS) {
             fclose(svg_file);
             return EINVAL;
         }
@@ -103,5 +103,5 @@ int main(int argc, char *argv[])
         fclose(svg_file);
     }
     // SUCCESSFULLY FINISH THE PROGRAM -------------------------
-    return SUCCESS;
+    return EXIT_SUCCESS;
 }

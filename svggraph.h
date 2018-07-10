@@ -1,3 +1,6 @@
+#ifndef SVGGRAPH
+#define SVGGRAPH
+
 #include <errno.h>
 #include <math.h>
 #include <stdio.h>
@@ -14,8 +17,6 @@
 #endif
 
 #define BEZ_SINE_APR 0.364212423249
-
-#define SUCCESS 0
 
 //#define DEBUG
 #ifdef DEBUG
@@ -48,3 +49,4 @@ enum graph_type
 };
 
 
+#endif /* SVGGRAPH */

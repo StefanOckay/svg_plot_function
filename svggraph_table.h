@@ -1,7 +1,4 @@
-#ifndef SVGGRAPH
-#define SVGGRAPH
 #include "svggraph.h"
-#endif
 
 
 /**

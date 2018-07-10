@@ -86,7 +86,7 @@ struct Parsed_double parse_user_input(const char *graph_const, const char *user_
     }
     double a = atof(a_string); // only valid argument is expected at this point
     result.real_number = a;
-    result.error = SUCCESS;
+    result.error = EXIT_SUCCESS;
     return result;
     error_return:
         result.error = EINVAL;
@@ -131,5 +131,5 @@ int parse_cml_input(int *graph_in_values, char *argv[]) {
             return EINVAL;
         }
     }
-    return SUCCESS;
+    return EXIT_SUCCESS;
 }
