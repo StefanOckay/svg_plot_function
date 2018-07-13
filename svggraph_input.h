@@ -57,4 +57,4 @@ struct Parsed_double parse_user_input(const char *graph_const, const char *user_
  * @param argv .. command line string values
  * @return 0 if success, error otherwise
  */
-int parse_cml_input(int graph_in_values[4], char *argv[]);
+int parse_cml_input(int *parsed_args, char *argv[]);

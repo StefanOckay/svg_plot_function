@@ -47,7 +47,7 @@ struct Parsed_double parse_user_input(const char *graph_const, const char *user_
         j++;
     }
     i += 2;
-    char a_string[20];
+    char a_string[22];
     char *valid_chars;
     int k = 0;
     int found_dot = 0;

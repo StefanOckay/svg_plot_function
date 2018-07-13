@@ -17,8 +17,8 @@ struct Table *new_table(unsigned char rows, unsigned char collumns) {
 }
 
 void free_table(struct Table *table) {
-    for (unsigned int r = 0; r < table->rows; r++) {
-        for (unsigned int c = 0; c < table->collumns; c++) {
+    for (size_t r = 0; r < table->rows; r++) {
+        for (size_t c = 0; c < table->collumns; c++) {
             free(table->cells[r * table->collumns + c]);
         }
     }
@@ -54,8 +54,8 @@ int print_table(struct Table *table) {
     if (collumn_widths == NULL) {
         return ENOMEM;
     }
-    for (unsigned int r = 0; r < table->rows; r++) {
-        for (unsigned int c = 0; c < table->collumns; c++) {
+    for (size_t r = 0; r < table->rows; r++) {
+        for (size_t c = 0; c < table->collumns; c++) {
             if (table->cells[r * table->collumns + c] != NULL) {
                 if (collumn_widths[c] < strlen(table->cells[r * table->collumns + c])) {
                     collumn_widths[c] = strlen(table->cells[r * table->collumns + c]);
