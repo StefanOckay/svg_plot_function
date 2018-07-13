@@ -43,28 +43,21 @@
 <rect x="0" y="0" width="600" height="400"/>
 </clipPath>
 </defs>
-<<<<<<< HEAD
-<text x="598" y="20" text-anchor="end" font-size="18" fill="rgb(183, 86, 177)">y = 3.545 x</text>
-<line clip-path="url(#myClip)" x1="0" y1="1211" x2="600" y2="-811" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<text x="598" y="40" text-anchor="end" font-size="18" fill="rgb(115, 193, 135)">y = 00.454 x</text>
-<line clip-path="url(#myClip)" x1="0" y1="329" x2="600" y2="71" fill="transparent" stroke="rgb(115, 193, 135)" stroke-width="1"/>
-<text x="598" y="60" text-anchor="end" font-size="18" fill="rgb(186, 92, 49)">y = x - 3</text>
-<line clip-path="url(#myClip)" x1="0" y1="571" x2="600" y2="0" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-=======
-<text x="598" y="20" text-anchor="end" font-size="18" fill="rgb(183, 86, 177)">y = x - 5.4350628</text>
-<line clip-path="url(#myClip)" x1="0" y1="641" x2="600" y2="70" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<text x="598" y="40" text-anchor="end" font-size="18" fill="rgb(115, 193, 135)">y = 0.425000 x</text>
-<line clip-path="url(#myClip)" x1="0" y1="320" x2="600" y2="80" fill="transparent" stroke="rgb(115, 193, 135)" stroke-width="1"/>
-<text x="598" y="60" text-anchor="end" font-size="18" fill="rgb(186, 92, 49)">y = x - 5.435</text>
-<line clip-path="url(#myClip)" x1="0" y1="641" x2="600" y2="69" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
->>>>>>> 34b1e4bf0ed7a793952d6ad074a87c886d5a5dfd
-<text x="598" y="80" text-anchor="end" font-size="18" fill="rgb(21, 162, 27)">y = cos x</text>
-<path clip-path="url(#myClip)" d="M -76.991118 171.428571 C -42.664906,171.428571 -17.069551,228.571429 17.256661,228.571429" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 17.256661 228.571429 C 51.582873,228.571429 77.178229,171.428571 111.504441,171.428571" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 111.504441 171.428571 C 145.830653,171.428571 171.426008,228.571429 205.752220,228.571429" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 205.752220 228.571429 C 240.078433,228.571429 265.673788,171.428571 300.000000,171.428571" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 300.000000 171.428571 C 334.326212,171.428571 359.921567,228.571429 394.247780,228.571429" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 394.247780 228.571429 C 428.573992,228.571429 454.169347,171.428571 488.495559,171.428571" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 488.495559 171.428571 C 522.821771,171.428571 548.417127,228.571429 582.743339,228.571429" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 582.743339 228.571429 C 617.069551,228.571429 642.664906,171.428571 676.991118,171.428571" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
+<text x="598" y="20" text-anchor="end" font-size="18" fill="rgb(183, 86, 177)">y = 00.435 x</text>
+<line clip-path="url(#myClip)" x1="0" y1="323" x2="600" y2="77" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
+<text x="598" y="40" text-anchor="end" font-size="18" fill="rgb(115, 193, 135)">y = -2 x</text>
+<line clip-path="url(#myClip)" x1="0" y1="-371" x2="600" y2="771" fill="transparent" stroke="rgb(115, 193, 135)" stroke-width="1"/>
+<text x="598" y="60" text-anchor="end" font-size="18" fill="rgb(186, 92, 49)">y = cos x</text>
+<path clip-path="url(#myClip)" d="M -76.991118 171.428571 C -42.664906,171.428571 -17.069551,228.571429 17.256661,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 17.256661 228.571429 C 51.582873,228.571429 77.178229,171.428571 111.504441,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 111.504441 171.428571 C 145.830653,171.428571 171.426008,228.571429 205.752220,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 205.752220 228.571429 C 240.078433,228.571429 265.673788,171.428571 300.000000,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 300.000000 171.428571 C 334.326212,171.428571 359.921567,228.571429 394.247780,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 394.247780 228.571429 C 428.573992,228.571429 454.169347,171.428571 488.495559,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 488.495559 171.428571 C 522.821771,171.428571 548.417127,228.571429 582.743339,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 582.743339 228.571429 C 617.069551,228.571429 642.664906,171.428571 676.991118,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<text x="598" y="80" text-anchor="end" font-size="18" fill="rgb(21, 162, 27)">y = x - 3.345</text>
+<line clip-path="url(#myClip)" x1="0" y1="581" x2="600" y2="10" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
+<text x="598" y="100" text-anchor="end" font-size="18" fill="rgb(90, 59, 163)">y = x + 1</text>
+<line clip-path="url(#myClip)" x1="0" y1="457" x2="600" y2="-114" fill="transparent" stroke="rgb(90, 59, 163)" stroke-width="1"/>
 </svg>
