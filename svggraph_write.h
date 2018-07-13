@@ -100,7 +100,7 @@ double map_to_ycoor(double y_range, double what, double height);
  * @param graph_type .. available functions enum type
  * @param color .. RGB struct type
  */
-void write_linear_line(FILE *svg_file, int *parsed_args, double a, graph_type graph_type, graph_color color);
+int write_linear_line(FILE *svg_file, int *parsed_args, double a, graph_type graph_type, graph_color color);
 
 /**
  * @brief write_sine_line .. appends a code for a sine approximation of the Bezier Curve to a svg file
@@ -112,7 +112,7 @@ void write_linear_line(FILE *svg_file, int *parsed_args, double a, graph_type gr
  * @param graph_type .. available functions enum type
  * @param color .. RGB struct type
  */
-void write_sine_line(FILE *svg_file, int *parsed_args, graph_type graph_type, graph_color color);
+int write_sine_line(FILE *svg_file, int *parsed_args, graph_type graph_type, graph_color color);
 
 /**
  * @brief write_function_label .. appends the function label to a svg file

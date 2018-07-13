@@ -90,7 +90,7 @@ double map_to_xcoor(double x_range, double what, double width) {
     return (x_range + what) * dist;
 }
 
-void write_linear_line(FILE *svg_file, int *parsed_args, double a, graph_type type, graph_color color) {
+int write_linear_line(FILE *svg_file, int *parsed_args, double a, graph_type type, graph_color color) {
     double width = (double) parsed_args[0];
     double height = (double) parsed_args[1];
     double x = (double) parsed_args[2];
@@ -111,9 +111,9 @@ void write_linear_line(FILE *svg_file, int *parsed_args, double a, graph_type ty
             fx2 = x - a;
             break;
         default:
-        fprintf(stderr, "Program error.\n");
-        fflush(stderr);
-        return;
+            fprintf(stderr, "\"write_linear_line\" works only for PROD, PLUS, MINUS.\n");
+            fflush(stderr);
+            return EINVAL;
             break;
     }
     double fx1_map = map_to_ycoor(y, fx1, height);
@@ -123,9 +123,15 @@ void write_linear_line(FILE *svg_file, int *parsed_args, double a, graph_type ty
                       "x2=\"%.0f\" y2=\"%.0f\" "
                       "fill=\"transparent\" stroke=\"rgb(%i, %i, %i)\" stroke-width=\"1\"/>\n",
             fx1_map, width, fx2_map, color.red, color.green, color.blue);
+    return EXIT_SUCCESS;
 }
 
-void write_sine_line(FILE *svg_file, int *parsed_args, graph_type type, graph_color color) {
+int write_sine_line(FILE *svg_file, int *parsed_args, graph_type type, graph_color color) {
+    if (type != SIN && type != COS) {
+        fprintf(stderr, "\"write_sine_line\" works only for sine and cosine.\n");
+        fflush(stderr);
+        return EINVAL;
+    }
     double width = (double) parsed_args[0];
     double height = (double) parsed_args[1];
     double x_range = (double) parsed_args[2];
@@ -166,7 +172,7 @@ void write_sine_line(FILE *svg_file, int *parsed_args, graph_type type, graph_co
             x_map[j] = map_to_xcoor(x_range, x[j], width);
             fx_map[j] = map_to_ycoor(y_range, fx[j], height);
         }
-        char s[128] = "<path clip-path=\"url(#myClip)\" "
+        char s[128u] = "<path clip-path=\"url(#myClip)\" "
                       "d=\"M %f %f C %f,%f %f,%f %f,%f\" "
                       "fill=\"transparent\" stroke=\"rgb(%i, %i, %i)\" stroke-width=\"1\"/>\n";
         fprintf(svg_file, s,
@@ -178,6 +184,7 @@ void write_sine_line(FILE *svg_file, int *parsed_args, graph_type type, graph_co
             sgn = -1;
         }
     }
+    return EXIT_SUCCESS;
 }
 
 void write_function_label(FILE *svg_file, int width, char *user_graph_in, int function_n, graph_color color) {

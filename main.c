@@ -45,6 +45,7 @@ int main(int argc, char *argv[])
     graph_color rgb_color;
     char user_graph_in[22];
     int function_counter = 0;
+    int ret_code = EXIT_SUCCESS;
     do {
         printf("> ");
         fflush(stdout);
@@ -77,16 +78,21 @@ int main(int argc, char *argv[])
             case PROD:
             case MINUS:
             case PLUS:
-                write_linear_line(svg_file, parsed_args, *a, type, rgb_color);
+                if (write_linear_line(svg_file, parsed_args, *a, type, rgb_color)) {
+                    ret_code = EXIT_FAILURE;
+                    break;
+                }
                 break;
             case SIN:
             case COS:
-                write_sine_line(svg_file, parsed_args, type, rgb_color);
+                if (write_sine_line(svg_file, parsed_args, type, rgb_color)) {
+                    ret_code = EXIT_FAILURE;
+                    break;
+                }
                 break;
             default:
-                fprintf(stderr, "Program error. Terminating.\n");
-                fflush(stderr);
-                return EXIT_FAILURE;
+                ret_code = EXIT_FAILURE;
+                break;
                 break;
             }
         }
@@ -102,5 +108,5 @@ int main(int argc, char *argv[])
         close_svg(svg_file);
         fclose(svg_file);
     }
-    return EXIT_SUCCESS;
+    return ret_code;
 }
