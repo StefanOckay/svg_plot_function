@@ -16,7 +16,7 @@
 #define M_PI_2           3.14159265358979323846 / (double)2
 #endif
 
-#define BEZ_SINE_APR 0.364212423249
+#define BEZ_SINE_APP 0.364212423249
 
 //#define DEBUG
 #ifdef DEBUG
@@ -28,17 +28,17 @@
 /**
  * @brief The graph_color struct .. RGB values of the graph plot
  */
-struct graph_color
+typedef struct _graph_color
 {
     int red;
     int green;
     int blue;
-};
+} graph_color;
 
 /**
  * @brief The graph_type enum .. "list" of the available functions
  */
-enum graph_type
+typedef enum _graph_type
 {
     SIN,
     COS,
@@ -46,7 +46,7 @@ enum graph_type
     PLUS,
     MINUS,
     ERROR
-};
+} graph_type;
 
 
 #endif /* SVGGRAPH */

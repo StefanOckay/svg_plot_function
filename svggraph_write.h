@@ -78,7 +78,7 @@ void write_cut(FILE *svg_file, int width, int height);
  * @param width
  * @return
  */
-double map_to_xcoordinate(int x_range, double what, int width);
+double map_to_xcoor(double x_range, double what, double width);
 
 /**
  * @brief map_to_ycoordinate
@@ -87,7 +87,7 @@ double map_to_xcoordinate(int x_range, double what, int width);
  * @param height
  * @return
  */
-double map_to_ycoordinate(int y_range, double what, int height);
+double map_to_ycoor(double y_range, double what, double height);
 
 /**
  * @brief write_linear_line .. appends a code for a linear line of a linear function
@@ -97,12 +97,11 @@ double map_to_ycoordinate(int y_range, double what, int height);
  * @param x .. x axis range
  * @param y .. y axis range
  * @param a .. the function coefficient
- * @param graph_type
- * @param color
+ * @param graph_type .. available functions enum type
+ * @param color .. RGB struct type
  */
-void write_linear_line(FILE *svg_file, int width, int height, int x, int y, double a, enum graph_type graph_type, struct graph_color color);
+void write_linear_line(FILE *svg_file, int *parsed_args, double a, graph_type graph_type, graph_color color);
 
-// https://stackoverflow.com/questions/29022438/how-to-approximate-a-half-cosine-curve-with-bezier-paths-in-svg
 /**
  * @brief write_sine_line .. appends a code for a sine approximation of the Bezier Curve to a svg file
  * @param svg_file
@@ -110,10 +109,10 @@ void write_linear_line(FILE *svg_file, int width, int height, int x, int y, doub
  * @param height
  * @param x .. x axis range
  * @param y .. y axis range
- * @param graph_type .. the enum type
- * @param color
+ * @param graph_type .. available functions enum type
+ * @param color .. RGB struct type
  */
-void write_sine_line(FILE *svg_file, int width, int height, int x, int y, enum graph_type graph_type, struct graph_color color);
+void write_sine_line(FILE *svg_file, int *parsed_args, graph_type graph_type, graph_color color);
 
 /**
  * @brief write_function_label .. appends the function label to a svg file
@@ -121,9 +120,9 @@ void write_sine_line(FILE *svg_file, int width, int height, int x, int y, enum g
  * @param width
  * @param user_graph_input
  * @param function_n .. number of functions to be plotted
- * @param color
+ * @param color .. RGB struct type
  */
-void write_function_label(FILE *svg_file, int width, char *user_graph_input, int function_n, struct graph_color color);
+void write_function_label(FILE *svg_file, int width, char *user_graph_in, int function_n, graph_color color);
 
 /**
  * @brief close_svg

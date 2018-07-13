@@ -10,90 +10,90 @@ int main(int argc, char *argv[])
         return EINVAL;
     }
     FILE *svg_file = NULL;
-    int graph_in_values[4];
+    int parsed_args[4];
     if (argc == 6) {
         svg_file = fopen(argv[1], "w");
         if (svg_file == NULL) {
             perror(argv[1]);
             return 1;
         }
-        // parse command line input
-        if (parse_cml_input(graph_in_values, argv) != EXIT_SUCCESS) {
+        if (parse_cml_input(parsed_args, argv) != EXIT_SUCCESS) {
             fclose(svg_file);
             return EINVAL;
         }
-        // WRITING TO SVG FILE BEGIN -------------------------
-        // basics
+        /* WRITING TO SVG FILE BEGIN ------------------------------------ */
         write_basics(svg_file);
-        // width and height of the svg file
-        write_wh(svg_file, graph_in_values[0], graph_in_values[1]);
-        // translation of the coordinates
+        write_wh(svg_file, parsed_args[0], parsed_args[1]);
 #ifdef DEBUG
         write_coordinates_translation(svg_file);
 #endif
-        // axis
-        write_xaxis(svg_file, graph_in_values[0], graph_in_values[1]);
-        write_yaxis(svg_file, graph_in_values[0], graph_in_values[1]);
-        // axis values
-        write_xvalues(svg_file, graph_in_values[0], graph_in_values[1], graph_in_values[2]);
-        write_yvalues(svg_file, graph_in_values[0], graph_in_values[1], graph_in_values[3]);
-        write_zero(svg_file, graph_in_values[0], graph_in_values[1]);
-        write_cut(svg_file, graph_in_values[0], graph_in_values[1]);
-        // WRITING TO SVG FILE END -------------------------
+        write_xaxis(svg_file, parsed_args[0], parsed_args[1]);
+        write_yaxis(svg_file, parsed_args[0], parsed_args[1]);
+        write_xvalues(svg_file, parsed_args[0], parsed_args[1], parsed_args[2]);
+        write_yvalues(svg_file, parsed_args[0], parsed_args[1], parsed_args[3]);
+        write_zero(svg_file, parsed_args[0], parsed_args[1]);
+        write_cut(svg_file, parsed_args[0], parsed_args[1]);
+        /* WRITING TO SVG FILE END -------------------------------------- */
     }
-    // USER INPUT BEGIN ----------------------------------
-    // declare useful variables
-    enum graph_type graph_type;
-    int function_counter = 0;
-    struct graph_color graph_color;
+    /* USER INPUT BEGIN --------------------------------------------- */
     double *a = calloc(1, sizeof(double)); // graph coefficient
     if (a == NULL) {
         fprintf(stderr, "Couldn't allocate memory. Exitting.\n");
         return ENOMEM;
     }
-    char user_graph_input[22];
-    char a_buffer[22];
-    // initialize input
-    printf("> ");
-    fflush(stdout); // c crap
-    fgets(user_graph_input, 22, stdin);
-    cut_new_line(user_graph_input);
-    // continue with cycle
-    while (strcmp("exit", user_graph_input)) {
-        find_graph_type(&graph_type, user_graph_input, a);
-        if (graph_type == ERROR) {
-            fprintf(stderr, "Bad function.\n");
-            fflush(stderr);
-            goto continue_print;
-        }
-        if (graph_type == SIN || graph_type == COS) {
-            *a = 0;
-        }
-        sprintf(a_buffer, "%.2f", *a); // rounding
-        sscanf(a_buffer, "%lf", a);    // rounding
-        // print to svg file
-        if (svg_file != NULL) {
-            function_counter++;
-            graph_color.red = rand() % 200;
-            graph_color.green = rand() % 200;
-            graph_color.blue = rand() % 200;
-            write_function_label(svg_file, graph_in_values[0], user_graph_input, function_counter, graph_color);
-            if (graph_type != SIN && graph_type != COS) {
-                write_linear_line(svg_file, graph_in_values[0], graph_in_values[1], graph_in_values[2], graph_in_values[3], *a, graph_type, graph_color);
-            } else {
-                write_sine_line(svg_file, graph_in_values[0], graph_in_values[1], graph_in_values[2], graph_in_values[3], graph_type, graph_color);
-            }
-        }
-        // print to stdout
-        print_to_stdout(graph_type, *a);
-    continue_print:
+    graph_type type;
+    graph_color rgb_color;
+    char user_graph_in[22];
+    int function_counter = 0;
+    do {
         printf("> ");
         fflush(stdout);
-        fgets(user_graph_input, 22, stdin);
-        cut_new_line(user_graph_input);
-    }
-        // USER INPUT END ------------------------------------
-        // CLOSE TAGS, THE FILE AND FREE HEAP MEMORY ---------------
+        fgets(user_graph_in, 22, stdin);
+        cut_new_line(user_graph_in);
+        if (!strcmp("exit", user_graph_in)) {
+            break;
+        }
+        find_graph_type(&type, user_graph_in, a);
+        if (type == ERROR) {
+            fprintf(stderr, "Bad function.\n");
+            fflush(stderr);
+            continue;
+        }
+        switch (type) {
+        case SIN:
+        case COS:
+            *a = 0;
+            break;
+        default:
+            prov_round(a);
+            break;
+        }
+        // write to svg file
+        if (svg_file != NULL) {
+            function_counter++;
+            set_color(&rgb_color);
+            write_function_label(svg_file, parsed_args[0], user_graph_in, function_counter, rgb_color);
+            switch (type) {
+            case PROD:
+            case MINUS:
+            case PLUS:
+                write_linear_line(svg_file, parsed_args, *a, type, rgb_color);
+                break;
+            case SIN:
+            case COS:
+                write_sine_line(svg_file, parsed_args, type, rgb_color);
+                break;
+            default:
+                fprintf(stderr, "Program error. Terminating.\n");
+                fflush(stderr);
+                return EXIT_FAILURE;
+                break;
+            }
+        }
+        print_to_stdout(type, *a);
+    } while (1);
+    /* USER INPUT END -------------------------------------------------- */
+    /* CLOSE TAGS, THE FILE AND FREE THE HEAP MEMORY ------------------- */
 #ifdef DEBUG
     close_translation(svg_file);
 #endif
@@ -102,6 +102,5 @@ int main(int argc, char *argv[])
         close_svg(svg_file);
         fclose(svg_file);
     }
-    // SUCCESSFULLY FINISH THE PROGRAM -------------------------
     return EXIT_SUCCESS;
 }

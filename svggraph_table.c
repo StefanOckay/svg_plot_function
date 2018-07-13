@@ -76,7 +76,7 @@ int assignCellI(struct Table *table, unsigned char row, unsigned char collumn, i
     if (row >= table->rows || collumn >= table->collumns ) {
         return EINVAL;
     }
-    char buffer[21];
+    char buffer[22];
     sprintf(buffer, "%i", value);
     size_t len = strlen(buffer);
     char *str = calloc(len + 1, sizeof(char));
@@ -92,7 +92,7 @@ int assignCellF(struct Table *table, unsigned char row, unsigned char collumn, d
     if (row >= table->rows || collumn >= table->collumns ) {
         return EINVAL;
     }
-    char buffer[21];
+    char buffer[22];
     sprintf(buffer, "%.2f", value);
     int len = strlen(buffer);
     char *str = calloc(len + 1, sizeof(char));
@@ -128,22 +128,20 @@ int assign_table_values(struct Table *table, char *function_str, double (*operat
     }
     int ret_code = 0;
     if ((ret_code = assignCellS(table, 0, 0, "x"))) {
-        goto cleanup;
+        return ret_code;
     }
     if ((ret_code = assignCellS(table, 1, 0, function_str))) {
-        goto cleanup;
+        return ret_code;
     }
     for (int x = 0; x <= 5; x++){
         if ((ret_code = assignCellI(table, 0, x + 1, x))) {
-            goto cleanup;
+            return ret_code;
         }
         if ((ret_code = assignCellF(table, 1, x + 1, operation(x, a)))) {
-            goto cleanup;
+            return ret_code;
         }
     }
-    ret_code = EXIT_SUCCESS;
-    cleanup:
-        return ret_code;
+    return EXIT_SUCCESS;
 }
 
 int simplify_function_str(char *str) {
@@ -163,9 +161,9 @@ int simplify_function_str(char *str) {
     return len;
 }
 
-int print_to_stdout(enum graph_type type, double a) {
+int print_to_stdout(graph_type type, double a) {
     struct Table *table = new_table(2, 7);
-    char label[21];
+    char label[22];
     int ret_code;
     switch (type) {
         case SIN:

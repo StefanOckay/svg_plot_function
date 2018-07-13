@@ -97,7 +97,7 @@ int print_table_for_function(char* function_str, double (*operation)(double, dou
  * @param parameter .. coeffiecient of the function
  * @return int value indicating (non)success
  */
-int print_to_stdout(enum graph_type type, double a);
+int print_to_stdout(graph_type type, double a);
 
 /**
  * @brief plus

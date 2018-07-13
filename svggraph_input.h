@@ -10,6 +10,18 @@ struct Parsed_double {
 };
 
 /**
+ * @brief prov_round .. provisore as rounds via sprintf, sscanf
+ * @param x .. double to be rounded to 2 decimal places
+ */
+void prov_round(double *x);
+
+/**
+ * @brief set_color .. sets readable(= not too bright) color for graph
+ * @param color .. rgb color struct
+ */
+void set_color(graph_color *rgb_color);
+
+/**
  * @brief cut_new_line .. transform the s string from "X\n" to "X\0", doesn't modify "X" without "\n"
  * @param s
  */
@@ -29,7 +41,7 @@ int is_valid_char(char c, const char *valid_chars);
  * @param user_graph_input
  * @param a .. outer variable expecting value from Parsed_double struct
  */
-void find_graph_type(enum graph_type *graph_type, const char *user_graph_input, double *a);
+void find_graph_type(graph_type *graph_type, const char *user_graph_in, double *a);
 
 /**
  * @brief parse_user_input .. parses runtime user function input
