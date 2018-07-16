@@ -166,9 +166,11 @@ int print_to_stdout(graph_type type, double a, char *fnc_label) {
     int ret_code;
     switch (type) {
         case SIN:
+            sprintf(fnc_label, "sin x");
             ret_code = assign_table_values(table, "sin x", &sinus, 0);
             break;
         case COS:
+        sprintf(fnc_label, "cos x");
             ret_code = assign_table_values(table, "cos x", &cosinus, 0);
             break;
         case PLUS:
