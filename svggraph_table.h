@@ -42,68 +42,70 @@ void print_table_line(struct Table *table, unsigned char row, size_t *collumn_wi
 /**
  * @brief print_table
  * @param table
- * @return
+ * @return int value indicating (non)success
  */
 int print_table(struct Table *table);
 
 /**
- * @brief assignCellI
+ * @brief assignCellI .. integer on pos [row, column]
  * @param table
  * @param row
  * @param collumn
- * @param value
- * @return
+ * @param value .. to be stored to the table
+ * @return int value indicating (non)success
  */
 int assignCellI(struct Table *table, unsigned char row, unsigned char collumn, int value);
 
 /**
  * @brief simplify
  * @param str
- * @return
+ * @return int value indicating (non)success
  */
 int simplify_function_str(char *str);
 
 /**
- * @brief assignCellF
+ * @brief assignCellF .. float on pos [row, column]
  * @param table
  * @param row
  * @param collumn
- * @param value
- * @return
+ * @param value .. to be stored to the table
+ * @return int value indicating (non)success
  */
 int assignCellF(struct Table *table, unsigned char row, unsigned char collumn, double value);
 
 /**
- * @brief assignCellS
+ * @brief assignCellS .. string on pos [row, column]
  * @param table
  * @param row
  * @param collumn
- * @param value
- * @return
+ * @param value .. to be stored to the table
+ * @return int value indicating (non)success
  */
 int assignCellS(struct Table *table, unsigned char row, unsigned char collumn, char *value);
 
 /**
  * @brief get_function_label
  * @param type
- * @param a
+ * @param a .. coeffiecient of the function
  * @param fnc_label
- * @return
+ * @return 0 if success, non-zero otherwise
  */
 int get_function_label(graph_type type, double a, char *fnc_label);
 
 /**
- * @brief print_table_for_function
- * @param function_str
- * @param parameter
- * @return
+ * @brief assign_table_values
+ * @param fnc_label
+ * @param operation
+ * @param a .. coeffiecient of the function
+ * @return 0 if success, non-zero otherwise
  */
 int assign_table_values(struct Table *table, char *fnc_label, double (*operation)(double, double), double a);
 
 /**
- * @brief print_to_stdout .. print the table for function values
+ * @brief print_to_stdout .. print a table for function values
  * @param type .. type of a graph
- * @param parameter .. coeffiecient of the function
+ * @param a .. coeffiecient of the function
+ * @param fnc_label
  * @return int value indicating (non)success
  */
 int print_to_stdout(graph_type type, double a, char *fnc_label);

@@ -60,12 +60,12 @@
 <path clip-path="url(#myClip)" d="M 394.247780 228.571429 C 428.573992,228.571429 454.169347,171.428571 488.495559,171.428571" fill="transparent" stroke="rgb(115, 193, 135)" stroke-width="1"/>
 <path clip-path="url(#myClip)" d="M 488.495559 171.428571 C 522.821771,171.428571 548.417127,228.571429 582.743339,228.571429" fill="transparent" stroke="rgb(115, 193, 135)" stroke-width="1"/>
 <path clip-path="url(#myClip)" d="M 582.743339 228.571429 C 617.069551,228.571429 642.664906,171.428571 676.991118,171.428571" fill="transparent" stroke="rgb(115, 193, 135)" stroke-width="1"/>
-<text x="598" y="60" text-anchor="end" font-size="18" fill="rgb(186, 92, 49)">0.45 x</text>
-<line clip-path="url(#myClip)" x1="0" y1="329" x2="600" y2="71" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<text x="598" y="80" text-anchor="end" font-size="18" fill="rgb(21, 162, 27)">-3 x</text>
-<line clip-path="url(#myClip)" x1="0" y1="-657" x2="600" y2="1057" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
-<text x="598" y="100" text-anchor="end" font-size="18" fill="rgb(90, 59, 163)">x - 2</text>
-<line clip-path="url(#myClip)" x1="0" y1="543" x2="600" y2="-29" fill="transparent" stroke="rgb(90, 59, 163)" stroke-width="1"/>
-<text x="598" y="120" text-anchor="end" font-size="18" fill="rgb(126, 140, 26)">x + 2.12</text>
-<line clip-path="url(#myClip)" x1="0" y1="425" x2="600" y2="-146" fill="transparent" stroke="rgb(126, 140, 26)" stroke-width="1"/>
+<text x="598" y="60" text-anchor="end" font-size="18" fill="rgb(186, 92, 49)">0.43 x</text>
+<line clip-path="url(#myClip)" x1="0" y1="323" x2="600" y2="77" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<text x="598" y="80" text-anchor="end" font-size="18" fill="rgb(21, 162, 27)">-2.01 x</text>
+<line clip-path="url(#myClip)" x1="0" y1="-374" x2="600" y2="774" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
+<text x="598" y="100" text-anchor="end" font-size="18" fill="rgb(90, 59, 163)">x + 3</text>
+<line clip-path="url(#myClip)" x1="0" y1="400" x2="600" y2="-171" fill="transparent" stroke="rgb(90, 59, 163)" stroke-width="1"/>
+<text x="598" y="120" text-anchor="end" font-size="18" fill="rgb(126, 140, 26)">x - 1</text>
+<line clip-path="url(#myClip)" x1="0" y1="514" x2="600" y2="-57" fill="transparent" stroke="rgb(126, 140, 26)" stroke-width="1"/>
 </svg>

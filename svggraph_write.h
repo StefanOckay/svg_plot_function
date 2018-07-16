@@ -92,10 +92,7 @@ double map_to_ycoor(double y_range, double what, double height);
 /**
  * @brief write_linear_line .. appends a code for a linear line of a linear function
  * @param svg_file
- * @param width
- * @param height
- * @param x .. x axis range
- * @param y .. y axis range
+ * @param parsed_args
  * @param a .. the function coefficient
  * @param graph_type .. available functions enum type
  * @param color .. RGB struct type
@@ -105,10 +102,7 @@ int write_linear_line(FILE *svg_file, int *parsed_args, double a, graph_type gra
 /**
  * @brief write_sine_line .. appends a code for a sine approximation of the Bezier Curve to a svg file
  * @param svg_file
- * @param width
- * @param height
- * @param x .. x axis range
- * @param y .. y axis range
+ * @param parsed_args
  * @param graph_type .. available functions enum type
  * @param color .. RGB struct type
  */
@@ -118,7 +112,7 @@ int write_sine_line(FILE *svg_file, int *parsed_args, graph_type graph_type, gra
  * @brief write_function_label .. appends the function label to a svg file
  * @param svg_file
  * @param width
- * @param user_graph_input
+ * @param fnc_label
  * @param function_n .. number of functions to be plotted
  * @param color .. RGB struct type
  */

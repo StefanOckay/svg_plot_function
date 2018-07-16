@@ -28,7 +28,7 @@ void cut_new_line(char *s);
 int is_valid_char(char c, const char *valid_chars);
 
 /**
- * @brief find_graph_type .. stores graph type from the user runtime input to graph_type
+ * @brief find_graph_type .. stores graph type from to the graph_type and coef. to the a
  * @param graph_type .. enum type listing graph types available
  * @param user_graph_input
  * @param a .. graph coefficient
@@ -48,6 +48,6 @@ int parse_user_input(const char *graph_const, const char *user_graph_input, doub
  * @brief parse_cml_input .. parses command line user input
  * @param graph_in_values .. storage for parsed cml values
  * @param argv .. command line string values
- * @return 0 if success, error otherwise
+ * @return 0 if success, non-zero otherwise
  */
 int parse_cml_input(int *parsed_args, char *argv[]);
