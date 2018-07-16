@@ -14,7 +14,7 @@ void set_color(graph_color *rgb_color) {
 }
 
 void cut_new_line(char *s) {
-    int i = 0;
+    unsigned char i = 0;
     while (s[i] != '\n') {
         if(s[i] == '\0') {
             return;
@@ -25,7 +25,7 @@ void cut_new_line(char *s) {
 }
 
 int is_valid_char(char c, const char *valid_chars) {
-    int i = 0;
+    unsigned char i = 0;
     while (valid_chars[i] != '\0') {
         if (c == valid_chars[i]) {
             return 0;
@@ -37,8 +37,8 @@ int is_valid_char(char c, const char *valid_chars) {
 
 struct Parsed_double parse_user_input(const char *graph_const, const char *user_graph_in) {
     struct Parsed_double result;
-    int i = 0;
-    int j = 0;
+    unsigned char i = 0;
+    unsigned char j = 0;
     while (graph_const[i] != '%') {
         if (graph_const[i] != user_graph_in[j]) {
             goto error_return;
@@ -49,14 +49,15 @@ struct Parsed_double parse_user_input(const char *graph_const, const char *user_
     i += 2;
     char a_string[22];
     char *valid_chars;
-    int k = 0;
-    int found_dot = 0;
+    unsigned char k = 0;
+    unsigned char found_dot = 0;
     if (!strcmp(graph_const, "y = x + %f") || !strcmp(graph_const, "y = x - %f")) {
         valid_chars = ".0123456789";
     } else {
         valid_chars = "-.0123456789";
     }
     while (!is_valid_char(user_graph_in[j], valid_chars)) {
+        //valid char is not enough, positioning is also important
         if (user_graph_in[j] == '.' && k == 0) {
             goto error_return;
         }
@@ -132,13 +133,12 @@ void find_graph_type(graph_type *type, const char *user_graph_input, double *a) 
         *a = a_struct.real_number;
         return;
     }
-    // input does not fit any graph type
     *type = ERROR;
 }
-
 int parse_cml_input(int *parsed_args, char *argv[]) {
-    for (int i = 2; i < 6; i++) {
+    for (unsigned char i = 2; i < 6; i++) {
         if ((parsed_args[i - 2] = atoi(argv[i])) <= 0) {
+            // prints only the first wrong
             fprintf(stderr, "Invalid input value number %i: %s\n", i - 1, argv[i]);
             return EINVAL;
         }

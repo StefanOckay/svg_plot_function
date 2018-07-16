@@ -13,7 +13,7 @@ void write_basics(FILE *svg_file);
  * @param width
  * @param height
  */
-void write_wh(FILE *svg_file, int width, int height);
+void write_wh(FILE *svg_file, size_t width, size_t height);
 
 /**
  * @brief write_coordinates_translation .. appends translation to a svg file for debugging
@@ -27,7 +27,7 @@ void write_coordinates_translation(FILE *svg_file);
  * @param width
  * @param height
  */
-void write_xaxis(FILE *svg_file, int width, int height);
+void write_xaxis(FILE *svg_file, size_t width, size_t height);
 
 /**
  * @brief write_yaxis ..  appends y axis line to a svg file
@@ -35,7 +35,7 @@ void write_xaxis(FILE *svg_file, int width, int height);
  * @param width
  * @param height
  */
-void write_yaxis(FILE *svg_file, int width, int height);
+void write_yaxis(FILE *svg_file, size_t width, size_t height);
 
 /**
  * @brief write_xvalues .. y text values of the axes
@@ -44,7 +44,7 @@ void write_yaxis(FILE *svg_file, int width, int height);
  * @param height
  * @param x
  */
-void write_xvalues(FILE *svg_file, int width, int height, int x);
+void write_xvalues(FILE *svg_file, size_t width, size_t height, int x);
 
 /**
  * @brief write_yvalues .. y text values of the axes
@@ -53,7 +53,7 @@ void write_xvalues(FILE *svg_file, int width, int height, int x);
  * @param height
  * @param y
  */
-void write_yvalues(FILE *svg_file, int width, int height, int y);
+void write_yvalues(FILE *svg_file, size_t width, size_t height, int y);
 
 /**
  * @brief write_zero .. zero text value at the crosssection of the axes, it needs to be treated as a special case
@@ -61,7 +61,7 @@ void write_yvalues(FILE *svg_file, int width, int height, int y);
  * @param width
  * @param height
  */
-void write_zero(FILE *svg_file, int width, int height);
+void write_zero(FILE *svg_file, size_t width, size_t height);
 
 /**
  * @brief write_cut appends code for clippath
@@ -69,7 +69,7 @@ void write_zero(FILE *svg_file, int width, int height);
  * @param width
  * @param height
  */
-void write_cut(FILE *svg_file, int width, int height);
+void write_cut(FILE *svg_file, size_t width, size_t height);
 
 /**
  * @brief map_to_xcoordinate
@@ -122,7 +122,7 @@ int write_sine_line(FILE *svg_file, int *parsed_args, graph_type graph_type, gra
  * @param function_n .. number of functions to be plotted
  * @param color .. RGB struct type
  */
-void write_function_label(FILE *svg_file, int width, char *user_graph_in, int function_n, graph_color color);
+void write_function_label(FILE *svg_file, size_t width, char *user_graph_in, size_t function_n, graph_color color);
 
 /**
  * @brief close_svg

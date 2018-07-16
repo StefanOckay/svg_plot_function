@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     graph_type type;
     graph_color rgb_color;
     char user_graph_in[22];
-    int function_counter = 0;
+    size_t function_counter = 0;
     int ret_code = EXIT_SUCCESS;
     do {
         printf("> ");

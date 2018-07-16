@@ -10,7 +10,7 @@ void write_basics(FILE *svg_file) {
             " xmlns:xlink=\"http://www.w3.org/1999/xlink\" ");
 }
 
-void write_wh(FILE *svg_file, int width, int height) {
+void write_wh(FILE *svg_file, size_t width, size_t height) {
     double fwidth = (double)width;
     double fheight = (double)height;
 #ifdef DEBUG
@@ -24,7 +24,7 @@ void write_coordinates_translation(FILE *svg_file) {
     fprintf(svg_file, "<g transform=\"translate(%i, %i)\">\n", OFFSET, OFFSET);
 }
 
-void write_xaxis(FILE *svg_file, int width, int height) {
+void write_xaxis(FILE *svg_file, size_t width, size_t height) {
     double fwidth = (double)width;
     double fheight = (double)height;
     char s[128u] = "<line x1=\"0\" y1=\"%.0f\" x2=\"%.0f\" y2=\"%.0f\""
@@ -32,7 +32,7 @@ void write_xaxis(FILE *svg_file, int width, int height) {
     fprintf(svg_file, s, fheight / 2, fwidth, fheight / 2);
 }
 
-void write_yaxis(FILE *svg_file, int width, int height) {
+void write_yaxis(FILE *svg_file, size_t width, size_t height) {
     double fwidth = (double)width;
     double fheight = (double)height;
     char s[128u] = "<line x1=\"%.0f\" y1=\"0\" x2=\"%.0f\" y2=\"%.0f\""
@@ -40,7 +40,7 @@ void write_yaxis(FILE *svg_file, int width, int height) {
     fprintf(svg_file, s, fwidth / 2, fwidth / 2, fheight);
 }
 
-void write_xvalues(FILE *svg_file, int width, int height, int x) {
+void write_xvalues(FILE *svg_file, size_t width, size_t height, int x) {
     double fwidth = (double)width;
     double fheight = (double)height;
     double dist =  fwidth / (double)(2 * x);
@@ -53,7 +53,7 @@ void write_xvalues(FILE *svg_file, int width, int height, int x) {
     }
 }
 
-void write_yvalues(FILE *svg_file, int width, int height, int y) {
+void write_yvalues(FILE *svg_file, size_t width, size_t height, int y) {
     double fwidth = (double)width;
     double fheight = (double)height;
     double dist =  fheight / (double)(2 * y);
@@ -65,17 +65,17 @@ void write_yvalues(FILE *svg_file, int width, int height, int y) {
     }
 }
 
-void write_zero(FILE *svg_file, int width, int height) {
+void write_zero(FILE *svg_file, size_t width, size_t height) {
     double fwidth = (double)width;
     double fheight = (double)height;
     char s[64u] = "<text x=\"%.0f\" y=\"%.0f\" fill=\"black\">0</text>\n";
     fprintf(svg_file, s, fwidth / 2 + 2, fheight / 2 - 2);
 }
 
-void write_cut(FILE *svg_file, int width, int height) {
+void write_cut(FILE *svg_file, size_t width, size_t height) {
     char s[128u] = "<defs>\n"
                   "<clipPath id=\"myClip\">\n"
-                  "<rect x=\"0\" y=\"0\" width=\"%i\" height=\"%i\"/>\n"
+                  "<rect x=\"0\" y=\"0\" width=\"%zu\" height=\"%zu\"/>\n"
                   "</clipPath>\n</defs>\n";
     fprintf(svg_file, s, width, height);
 }
@@ -187,8 +187,8 @@ int write_sine_line(FILE *svg_file, int *parsed_args, graph_type type, graph_col
     return EXIT_SUCCESS;
 }
 
-void write_function_label(FILE *svg_file, int width, char *user_graph_in, int function_n, graph_color color) {
-    char s[128u] = "<text x=\"%i\" y=\"%i\" text-anchor=\"end\" font-size=\"18\" fill=\"rgb(%i, %i, %i)\">%s</text>\n";
+void write_function_label(FILE *svg_file, size_t width, char *user_graph_in, size_t function_n, graph_color color) {
+    char s[128u] = "<text x=\"%zu\" y=\"%zu\" text-anchor=\"end\" font-size=\"18\" fill=\"rgb(%i, %i, %i)\">%s</text>\n";
     fprintf(svg_file, s, width - 2, function_n * 20, color.red, color.green, color.blue, user_graph_in);
 }
 

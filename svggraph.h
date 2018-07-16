@@ -9,11 +9,11 @@
 
 
 #ifndef M_PI
-#define M_PI           3.14159265358979323846
+#define M_PI 3.14159265358979323846
 #endif
 
 #ifndef M_PI_2
-#define M_PI_2           3.14159265358979323846 / (double)2
+#define M_PI_2 3.14159265358979323846 / (double)2
 #endif
 
 #define BEZ_SINE_APP 0.364212423249
@@ -30,9 +30,9 @@
  */
 typedef struct _graph_color
 {
-    int red;
-    int green;
-    int blue;
+    unsigned char red;
+    unsigned char green;
+    unsigned char blue;
 } graph_color;
 
 /**

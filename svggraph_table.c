@@ -17,8 +17,8 @@ struct Table *new_table(unsigned char rows, unsigned char collumns) {
 }
 
 void free_table(struct Table *table) {
-    for (size_t r = 0; r < table->rows; r++) {
-        for (size_t c = 0; c < table->collumns; c++) {
+    for (unsigned char r = 0; r < table->rows; r++) {
+        for (unsigned char c = 0; c < table->collumns; c++) {
             free(table->cells[r * table->collumns + c]);
         }
     }
@@ -27,7 +27,7 @@ void free_table(struct Table *table) {
 
 void print_horizontal_table_border(struct Table *table, size_t *collumn_widths) {
     putchar('+');
-    for(size_t c = 0; c < table->collumns; c++) {
+    for(unsigned char c = 0; c < table->collumns; c++) {
         for(size_t j = 0; j < collumn_widths[c]; j++) {
             putchar('-');
         }
@@ -38,7 +38,7 @@ void print_horizontal_table_border(struct Table *table, size_t *collumn_widths) 
 
 void print_table_line(struct Table *table, unsigned char row, size_t *collumn_widths) {
     putchar('|');
-    for(size_t c = 0; c < table->collumns; c++){
+    for(unsigned char c = 0; c < table->collumns; c++){
         if(table->cells[row * table->collumns + c] == NULL) {
             printf("%-*s", (int)collumn_widths[c], "");
         } else {
@@ -54,8 +54,8 @@ int print_table(struct Table *table) {
     if (collumn_widths == NULL) {
         return ENOMEM;
     }
-    for (size_t r = 0; r < table->rows; r++) {
-        for (size_t c = 0; c < table->collumns; c++) {
+    for (unsigned char r = 0; r < table->rows; r++) {
+        for (unsigned char c = 0; c < table->collumns; c++) {
             if (table->cells[r * table->collumns + c] != NULL) {
                 if (collumn_widths[c] < strlen(table->cells[r * table->collumns + c])) {
                     collumn_widths[c] = strlen(table->cells[r * table->collumns + c]);
@@ -94,7 +94,7 @@ int assignCellF(struct Table *table, unsigned char row, unsigned char collumn, d
     }
     char buffer[22];
     sprintf(buffer, "%.2f", value);
-    int len = strlen(buffer);
+    unsigned char len = strlen(buffer);
     char *str = calloc(len + 1, sizeof(char));
     if (str == NULL) {
         return ENOMEM;
@@ -145,7 +145,7 @@ int assign_table_values(struct Table *table, char *function_str, double (*operat
 }
 
 int simplify_function_str(char *str) {
-    int len = strlen(str);
+    unsigned char len = strlen(str);
     for(int i = len - 1; len > 0; i--) {
         if (str[i] == '0') {
             str[i] = '\0';
