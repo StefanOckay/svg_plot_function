@@ -84,12 +84,21 @@ int assignCellF(struct Table *table, unsigned char row, unsigned char collumn, d
 int assignCellS(struct Table *table, unsigned char row, unsigned char collumn, char *value);
 
 /**
+ * @brief get_function_label
+ * @param type
+ * @param a
+ * @param fnc_label
+ * @return
+ */
+int get_function_label(graph_type type, double a, char *fnc_label);
+
+/**
  * @brief print_table_for_function
  * @param function_str
  * @param parameter
  * @return
  */
-int print_table_for_function(char* function_str, double (*operation)(double, double), double a);
+int assign_table_values(struct Table *table, char *fnc_label, double (*operation)(double, double), double a);
 
 /**
  * @brief print_to_stdout .. print the table for function values

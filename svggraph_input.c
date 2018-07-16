@@ -35,13 +35,12 @@ int is_valid_char(char c, const char *valid_chars) {
     return 1;
 }
 
-struct Parsed_double parse_user_input(const char *graph_const, const char *user_graph_in) {
-    struct Parsed_double result;
+int parse_user_input(const char *graph_const, const char *user_graph_in, double *a) {
     unsigned char i = 0;
     unsigned char j = 0;
     while (graph_const[i] != '%') {
         if (graph_const[i] != user_graph_in[j]) {
-            goto error_return;
+            return EINVAL;
         }
         i++;
         j++;
@@ -59,54 +58,49 @@ struct Parsed_double parse_user_input(const char *graph_const, const char *user_
     while (!is_valid_char(user_graph_in[j], valid_chars)) {
         //valid char is not enough, positioning is also important
         if (user_graph_in[j] == '.' && k == 0) {
-            goto error_return;
+            return EINVAL;
         }
         if (user_graph_in[j] == '-' && k == 0 && user_graph_in[j + 1] == '.') {
-            goto error_return;
+            return EINVAL;
         }
         if (user_graph_in[j] == '.') {
             if (found_dot) {
-                goto error_return;
+                return EINVAL;
             }
             found_dot = 1;
         }
         if (user_graph_in[j] == '-' && k > 0) {
-            goto error_return;
+            return EINVAL;
         }
         a_string[k] = user_graph_in[j];
         j++;
         k++;
     }
     if (user_graph_in[j - 1] == '.') {
-        goto error_return;
+        return EINVAL;
     }
     a_string[k] = '\0';
     if (a_string[0] == '\0') {
-        goto error_return;
+        return EINVAL;
     }
     if (!strcmp("-", a_string)) {
-        goto error_return;
+        return EINVAL;
     }
     while (graph_const[i] != '\0') {
         if (graph_const[i] != user_graph_in[j]) {
-            goto error_return;
+            return EINVAL;
         }
         i++;
         j++;
     }
     if (user_graph_in[j] != '\0') {
-        goto error_return;
+        return EINVAL;
     }
-    double a = atof(a_string); // only valid argument is expected at this point
-    result.real_number = a;
-    result.error = EXIT_SUCCESS;
-    return result;
-    error_return:
-        result.error = EINVAL;
-        return result;
+    *a = atof(a_string); // only valid argument is expected at this point
+    return EXIT_SUCCESS;
 }
 
-void find_graph_type(graph_type *type, const char *user_graph_input, double *a) {
+void find_graph_type_and_values(graph_type *type, const char *user_graph_input, double *a) {
     if (!strcmp("y = sin x", user_graph_input)) {
         *type = SIN;
         *a = 0;
@@ -117,24 +111,21 @@ void find_graph_type(graph_type *type, const char *user_graph_input, double *a) 
         *a = 0;
         return;
     }
-    struct Parsed_double a_struct;
-    if ((a_struct = parse_user_input("y = %f x", user_graph_input)).error == 0) {
+    if (!parse_user_input("y = %f x", user_graph_input, a)) {
         *type = PROD;
-        *a = a_struct.real_number;
         return;
     }
-    if ((a_struct = parse_user_input("y = x + %f", user_graph_input)).error == 0) {
+    if (!parse_user_input("y = x + %f", user_graph_input, a)) {
         *type = PLUS;
-        *a = a_struct.real_number;
         return;
     }
-    if ((a_struct = parse_user_input("y = x - %f", user_graph_input)).error == 0) {
+    if (!parse_user_input("y = x - %f", user_graph_input, a)) {
         *type = MINUS;
-        *a = a_struct.real_number;
         return;
     }
     *type = ERROR;
 }
+
 int parse_cml_input(int *parsed_args, char *argv[]) {
     for (unsigned char i = 2; i < 6; i++) {
         if ((parsed_args[i - 2] = atoi(argv[i])) <= 0) {

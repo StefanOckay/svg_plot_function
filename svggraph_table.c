@@ -122,7 +122,7 @@ int assignCellS(struct Table *table, unsigned char row, unsigned char collumn, c
     return EXIT_SUCCESS;
 }
 
-int assign_table_values(struct Table *table, char *function_str, double (*operation)(double, double), double a) {
+int assign_table_values(struct Table *table, char *fnc_label, double (*operation)(double, double), double a) {
     if (table == NULL) {
         return ENOMEM;
     }
@@ -130,7 +130,7 @@ int assign_table_values(struct Table *table, char *function_str, double (*operat
     if ((ret_code = assignCellS(table, 0, 0, "x"))) {
         return ret_code;
     }
-    if ((ret_code = assignCellS(table, 1, 0, function_str))) {
+    if ((ret_code = assignCellS(table, 1, 0, fnc_label))) {
         return ret_code;
     }
     for (int x = 0; x <= 5; x++){
@@ -161,32 +161,52 @@ int simplify_function_str(char *str) {
     return len;
 }
 
-int print_to_stdout(graph_type type, double a, char *fnc_label) {
-    struct Table *table = new_table(2, 7);
-    int ret_code;
+int get_function_label(graph_type type, double a, char *fnc_label) {
     switch (type) {
         case SIN:
             sprintf(fnc_label, "sin x");
-            ret_code = assign_table_values(table, "sin x", &sinus, 0);
             break;
         case COS:
-        sprintf(fnc_label, "cos x");
-            ret_code = assign_table_values(table, "cos x", &cosinus, 0);
+            sprintf(fnc_label, "cos x");
             break;
         case PLUS:
             sprintf(fnc_label, "x + %.2f", a);
             simplify_function_str(fnc_label);
-            ret_code = assign_table_values(table, fnc_label, &plus, a);
             break;
         case MINUS:
             sprintf(fnc_label, "x - %.2f", a);
             simplify_function_str(fnc_label);
-            ret_code = assign_table_values(table, fnc_label, &minus, a);
             break;
         case PROD:
             sprintf(fnc_label, "%.2f", a);
             simplify_function_str(fnc_label);
             strcat(fnc_label, " x");
+            break;
+        default:
+            fprintf(stderr, "Unknown graph type.");
+            return EINVAL;
+    }
+    return EXIT_SUCCESS;
+
+}
+
+int print_to_stdout(graph_type type, double a, char *fnc_label) {
+    struct Table *table = new_table(2, 7);
+    int ret_code;
+    switch (type) {
+        case SIN:
+            ret_code = assign_table_values(table, fnc_label, &sinus, 0);
+            break;
+        case COS:
+            ret_code = assign_table_values(table, fnc_label, &cosinus, 0);
+            break;
+        case PLUS:
+            ret_code = assign_table_values(table, fnc_label, &plus, a);
+            break;
+        case MINUS:
+            ret_code = assign_table_values(table, fnc_label, &minus, a);
+            break;
+        case PROD:
             ret_code = assign_table_values(table, fnc_label, &multiply, a);
             break;
         default:

@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
         if (!strcmp("exit", user_graph_in)) {
             break;
         }
-        find_graph_type(&type, user_graph_in, a);
+        find_graph_type_and_values(&type, user_graph_in, a);
         if (type == ERROR) {
             fprintf(stderr, "Bad function.\n");
             fflush(stderr);
@@ -70,7 +70,12 @@ int main(int argc, char *argv[])
             prov_round(a);
             break;
         }
-        print_to_stdout(type, *a, fnc_label);
+        if ((ret_code = get_function_label(type, *a, fnc_label))) {
+            goto error_return;
+        }
+        if ((ret_code = print_to_stdout(type, *a, fnc_label))) {
+            goto error_return;
+        }
         // write to svg file
         if (svg_file != NULL) {
             function_counter++;
@@ -80,26 +85,25 @@ int main(int argc, char *argv[])
             case PROD:
             case MINUS:
             case PLUS:
-                if (write_linear_line(svg_file, parsed_args, *a, type, rgb_color)) {
-                    ret_code = EXIT_FAILURE;
-                    break;
+                if ((ret_code = write_linear_line(svg_file, parsed_args, *a, type, rgb_color))) {
+                    goto error_return;
                 }
                 break;
             case SIN:
             case COS:
-                if (write_sine_line(svg_file, parsed_args, type, rgb_color)) {
-                    ret_code = EXIT_FAILURE;
-                    break;
+                if ((ret_code = write_sine_line(svg_file, parsed_args, type, rgb_color))) {
+                    goto error_return;
                 }
                 break;
             default:
-                ret_code = EXIT_FAILURE;
-                break;
+                ret_code = EINVAL;
+                goto error_return;
                 break;
             }
         }
     } while (1);
     /* USER INPUT END -------------------------------------------------- */
+    error_return:
     /* CLOSE TAGS, THE FILE AND FREE THE HEAP MEMORY ------------------- */
 #ifdef DEBUG
     close_translation(svg_file);

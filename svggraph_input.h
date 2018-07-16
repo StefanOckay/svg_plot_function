@@ -2,14 +2,6 @@
 
 
 /**
- * @brief The Parsed_double struct
- */
-struct Parsed_double {
-    int error;
-    double real_number;
-};
-
-/**
  * @brief prov_round .. provisore as rounds via sprintf, sscanf
  * @param x .. double to be rounded to 2 decimal places
  */
@@ -36,20 +28,21 @@ void cut_new_line(char *s);
 int is_valid_char(char c, const char *valid_chars);
 
 /**
- * @brief find_graph_type .. determines graph type from the user runtime input
+ * @brief find_graph_type .. stores graph type from the user runtime input to graph_type
  * @param graph_type .. enum type listing graph types available
  * @param user_graph_input
- * @param a .. outer variable expecting value from Parsed_double struct
+ * @param a .. graph coefficient
  */
-void find_graph_type(graph_type *graph_type, const char *user_graph_in, double *a);
+void find_graph_type_and_values(graph_type *graph_type, const char *user_graph_in, double *a);
 
 /**
- * @brief parse_user_input .. parses runtime user function input
- * @param graph_const .. type of a function stored in a model string to be compared with UI
+ * @brief parse_user_input .. stores graph coefficient into a
+ * @param graph_const .. model of the graph string
  * @param user_graph_input
- * @return structure containing the parsed input and error value (== 1 if invalid input was obtained)
+ * @param a .. graph coefficient
+ * @return 0 value if success, non-zero otherwise
  */
-struct Parsed_double parse_user_input(const char *graph_const, const char *user_graph_input);
+int parse_user_input(const char *graph_const, const char *user_graph_input, double *a);
 
 /**
  * @brief parse_cml_input .. parses command line user input
