@@ -122,7 +122,7 @@ int write_sine_line(FILE *svg_file, int *parsed_args, graph_type graph_type, gra
  * @param function_n .. number of functions to be plotted
  * @param color .. RGB struct type
  */
-void write_function_label(FILE *svg_file, size_t width, char *user_graph_in, size_t function_n, graph_color color);
+void write_function_label(FILE *svg_file, size_t width, char *fnc_label, size_t function_n, graph_color color);
 
 /**
  * @brief close_svg

@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
     graph_type type;
     graph_color rgb_color;
     char user_graph_in[22];
+    char fnc_label[22];
     size_t function_counter = 0;
     int ret_code = EXIT_SUCCESS;
     do {
@@ -69,11 +70,12 @@ int main(int argc, char *argv[])
             prov_round(a);
             break;
         }
+        print_to_stdout(type, *a, fnc_label);
         // write to svg file
         if (svg_file != NULL) {
             function_counter++;
             set_color(&rgb_color);
-            write_function_label(svg_file, parsed_args[0], user_graph_in, function_counter, rgb_color);
+            write_function_label(svg_file, parsed_args[0], fnc_label, function_counter, rgb_color);
             switch (type) {
             case PROD:
             case MINUS:
@@ -96,7 +98,6 @@ int main(int argc, char *argv[])
                 break;
             }
         }
-        print_to_stdout(type, *a);
     } while (1);
     /* USER INPUT END -------------------------------------------------- */
     /* CLOSE TAGS, THE FILE AND FREE THE HEAP MEMORY ------------------- */

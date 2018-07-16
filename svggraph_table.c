@@ -161,9 +161,8 @@ int simplify_function_str(char *str) {
     return len;
 }
 
-int print_to_stdout(graph_type type, double a) {
+int print_to_stdout(graph_type type, double a, char *fnc_label) {
     struct Table *table = new_table(2, 7);
-    char label[22];
     int ret_code;
     switch (type) {
         case SIN:
@@ -173,23 +172,22 @@ int print_to_stdout(graph_type type, double a) {
             ret_code = assign_table_values(table, "cos x", &cosinus, 0);
             break;
         case PLUS:
-            sprintf(label, "x + %.2f", a);
-            simplify_function_str(label);
-            ret_code = assign_table_values(table, label, &plus, a);
+            sprintf(fnc_label, "x + %.2f", a);
+            simplify_function_str(fnc_label);
+            ret_code = assign_table_values(table, fnc_label, &plus, a);
             break;
         case MINUS:
-            sprintf(label, "x - %.2f", a);
-            simplify_function_str(label);
-            ret_code = assign_table_values(table, label, &minus, a);
+            sprintf(fnc_label, "x - %.2f", a);
+            simplify_function_str(fnc_label);
+            ret_code = assign_table_values(table, fnc_label, &minus, a);
             break;
         case PROD:
-            sprintf(label, "%.2f", a);
-            simplify_function_str(label);
-            strcat(label, " x");
-            ret_code = assign_table_values(table, label, &multiply, a);
+            sprintf(fnc_label, "%.2f", a);
+            simplify_function_str(fnc_label);
+            strcat(fnc_label, " x");
+            ret_code = assign_table_values(table, fnc_label, &multiply, a);
             break;
         default:
-            // shouldn't happen
             fprintf(stderr, "Unknown graph type.");
             return EINVAL;
     }

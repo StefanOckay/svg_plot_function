@@ -187,9 +187,9 @@ int write_sine_line(FILE *svg_file, int *parsed_args, graph_type type, graph_col
     return EXIT_SUCCESS;
 }
 
-void write_function_label(FILE *svg_file, size_t width, char *user_graph_in, size_t function_n, graph_color color) {
+void write_function_label(FILE *svg_file, size_t width, char *fnc_label, size_t function_n, graph_color color) {
     char s[128u] = "<text x=\"%zu\" y=\"%zu\" text-anchor=\"end\" font-size=\"18\" fill=\"rgb(%i, %i, %i)\">%s</text>\n";
-    fprintf(svg_file, s, width - 2, function_n * 20, color.red, color.green, color.blue, user_graph_in);
+    fprintf(svg_file, s, width - 2, function_n * 20, color.red, color.green, color.blue, fnc_label);
 }
 
 void close_svg(FILE *svg_file) {
