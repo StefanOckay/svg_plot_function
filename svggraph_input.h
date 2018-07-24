@@ -2,12 +2,6 @@
 
 
 /**
- * @brief prov_round .. provisore as rounds via sprintf, sscanf
- * @param x .. double to be rounded to 2 decimal places
- */
-void prov_round(double *x);
-
-/**
  * @brief set_color .. sets readable(= not too bright) color for graph
  * @param color .. rgb color struct
  */

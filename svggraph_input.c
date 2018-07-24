@@ -1,12 +1,6 @@
 #include "svggraph_input.h"
 
 
-void prov_round(double *x) {
-    char x_buffer[22];
-    sprintf(x_buffer, "%.2f", *x);
-    sscanf(x_buffer, "%lf", x);
-}
-
 void set_color(graph_color *rgb_color) {
     rgb_color->red = rand() % 200;
     rgb_color->green = rand() % 200;

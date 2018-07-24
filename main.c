@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
             *a = 0;
             break;
         default:
-            prov_round(a);
+            *a = round(*a * 100) / 100;
             break;
         }
         if ((ret_code = get_function_label(type, *a, fnc_label))) {
