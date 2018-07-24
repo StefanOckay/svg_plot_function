@@ -3,38 +3,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="400">
 <line x1="0" y1="200" x2="600" y2="200" stroke="rgb(100, 100, 100)" stroke-width="3"/>
 <line x1="300" y1="0" x2="300" y2="400" stroke="rgb(100, 100, 100)" stroke-width="3"/>
-<text x="-4" y="198" text-anchor="middle" fill="black">-16</text>
-<text x="15" y="198" text-anchor="middle" fill="black">-15</text>
-<text x="34" y="198" text-anchor="middle" fill="black">-14</text>
-<text x="52" y="198" text-anchor="middle" fill="black">-13</text>
-<text x="71" y="198" text-anchor="middle" fill="black">-12</text>
-<text x="90" y="198" text-anchor="middle" fill="black">-11</text>
-<text x="108" y="198" text-anchor="middle" fill="black">-10</text>
-<text x="127" y="198" text-anchor="middle" fill="black">-9</text>
-<text x="146" y="198" text-anchor="middle" fill="black">-8</text>
-<text x="165" y="198" text-anchor="middle" fill="black">-7</text>
-<text x="184" y="198" text-anchor="middle" fill="black">-6</text>
-<text x="202" y="198" text-anchor="middle" fill="black">-5</text>
-<text x="221" y="198" text-anchor="middle" fill="black">-4</text>
-<text x="240" y="198" text-anchor="middle" fill="black">-3</text>
-<text x="258" y="198" text-anchor="middle" fill="black">-2</text>
-<text x="277" y="198" text-anchor="middle" fill="black">-1</text>
-<text x="315" y="198" text-anchor="middle" fill="black">1</text>
-<text x="334" y="198" text-anchor="middle" fill="black">2</text>
-<text x="352" y="198" text-anchor="middle" fill="black">3</text>
-<text x="371" y="198" text-anchor="middle" fill="black">4</text>
-<text x="390" y="198" text-anchor="middle" fill="black">5</text>
-<text x="408" y="198" text-anchor="middle" fill="black">6</text>
-<text x="427" y="198" text-anchor="middle" fill="black">7</text>
-<text x="446" y="198" text-anchor="middle" fill="black">8</text>
-<text x="465" y="198" text-anchor="middle" fill="black">9</text>
-<text x="484" y="198" text-anchor="middle" fill="black">10</text>
-<text x="502" y="198" text-anchor="middle" fill="black">11</text>
-<text x="521" y="198" text-anchor="middle" fill="black">12</text>
-<text x="540" y="198" text-anchor="middle" fill="black">13</text>
-<text x="558" y="198" text-anchor="middle" fill="black">14</text>
-<text x="577" y="198" text-anchor="middle" fill="black">15</text>
-<text x="596" y="198" text-anchor="middle" fill="black">16</text>
+<text x="-4" y="198" text-anchor="middle" fill="black">-10</text>
+<text x="26" y="198" text-anchor="middle" fill="black">-9</text>
+<text x="56" y="198" text-anchor="middle" fill="black">-8</text>
+<text x="86" y="198" text-anchor="middle" fill="black">-7</text>
+<text x="116" y="198" text-anchor="middle" fill="black">-6</text>
+<text x="146" y="198" text-anchor="middle" fill="black">-5</text>
+<text x="176" y="198" text-anchor="middle" fill="black">-4</text>
+<text x="206" y="198" text-anchor="middle" fill="black">-3</text>
+<text x="236" y="198" text-anchor="middle" fill="black">-2</text>
+<text x="266" y="198" text-anchor="middle" fill="black">-1</text>
+<text x="326" y="198" text-anchor="middle" fill="black">1</text>
+<text x="356" y="198" text-anchor="middle" fill="black">2</text>
+<text x="386" y="198" text-anchor="middle" fill="black">3</text>
+<text x="416" y="198" text-anchor="middle" fill="black">4</text>
+<text x="446" y="198" text-anchor="middle" fill="black">5</text>
+<text x="476" y="198" text-anchor="middle" fill="black">6</text>
+<text x="506" y="198" text-anchor="middle" fill="black">7</text>
+<text x="536" y="198" text-anchor="middle" fill="black">8</text>
+<text x="566" y="198" text-anchor="middle" fill="black">9</text>
+<text x="596" y="198" text-anchor="middle" fill="black">10</text>
 <text x="302" y="405" fill="black">-7</text>
 <text x="302" y="376" fill="black">-6</text>
 <text x="302" y="348" fill="black">-5</text>
@@ -55,35 +43,27 @@
 <rect x="0" y="0" width="600" height="400"/>
 </clipPath>
 </defs>
-<text x="598" y="20" text-anchor="end" font-size="18" fill="rgb(183, 86, 177)">sin x</text>
-<path clip-path="url(#myClip)" d="M -23.976742 171.428571 C -2.522860,171.428571 13.474237,228.571429 34.928120,228.571429" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 34.928120 228.571429 C 56.382002,228.571429 72.379099,171.428571 93.832982,171.428571" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 93.832982 171.428571 C 115.286865,171.428571 131.283962,228.571429 152.737844,228.571429" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 152.737844 228.571429 C 174.191727,228.571429 190.188824,171.428571 211.642707,171.428571" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 211.642707 171.428571 C 233.096589,171.428571 249.093686,228.571429 270.547569,228.571429" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 270.547569 228.571429 C 292.001451,228.571429 307.998549,171.428571 329.452431,171.428571" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 329.452431 171.428571 C 350.906314,171.428571 366.903411,228.571429 388.357293,228.571429" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 388.357293 228.571429 C 409.811176,228.571429 425.808273,171.428571 447.262156,171.428571" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 447.262156 171.428571 C 468.716038,171.428571 484.713135,228.571429 506.167018,228.571429" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 506.167018 228.571429 C 527.620901,228.571429 543.617998,171.428571 565.071880,171.428571" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 565.071880 171.428571 C 586.525763,171.428571 602.522860,228.571429 623.976742,228.571429" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
-<text x="598" y="40" text-anchor="end" font-size="18" fill="rgb(115, 193, 135)">0.44 x</text>
-<line clip-path="url(#myClip)" x1="0" y1="401" x2="600" y2="-1" fill="transparent" stroke="rgb(115, 193, 135)" stroke-width="1"/>
+<text x="598" y="20" text-anchor="end" font-size="18" fill="rgb(183, 86, 177)">0.44 x</text>
+<line clip-path="url(#myClip)" x1="0" y1="326" x2="600" y2="74" fill="transparent" stroke="rgb(183, 86, 177)" stroke-width="1"/>
+<text x="598" y="40" text-anchor="end" font-size="18" fill="rgb(115, 193, 135)">-2.02 x</text>
+<line clip-path="url(#myClip)" x1="0" y1="-377" x2="600" y2="777" fill="transparent" stroke="rgb(115, 193, 135)" stroke-width="1"/>
 <text x="598" y="60" text-anchor="end" font-size="18" fill="rgb(186, 92, 49)">cos x</text>
-<path clip-path="url(#myClip)" d="M -53.429174 171.428571 C -31.975291,171.428571 -15.978194,228.571429 5.475689,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 5.475689 228.571429 C 26.929571,228.571429 42.926668,171.428571 64.380551,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 64.380551 171.428571 C 85.834434,171.428571 101.831531,228.571429 123.285413,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 123.285413 228.571429 C 144.739296,228.571429 160.736393,171.428571 182.190275,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 182.190275 171.428571 C 203.644158,171.428571 219.641255,228.571429 241.095138,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 241.095138 228.571429 C 262.549020,228.571429 278.546117,171.428571 300.000000,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 300.000000 171.428571 C 321.453883,171.428571 337.450980,228.571429 358.904862,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 358.904862 228.571429 C 380.358745,228.571429 396.355842,171.428571 417.809725,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 417.809725 171.428571 C 439.263607,171.428571 455.260704,228.571429 476.714587,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 476.714587 228.571429 C 498.168469,228.571429 514.165566,171.428571 535.619449,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 535.619449 171.428571 C 557.073332,171.428571 573.070429,228.571429 594.524311,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<path clip-path="url(#myClip)" d="M 594.524311 228.571429 C 615.978194,228.571429 631.975291,171.428571 653.429174,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
-<text x="598" y="80" text-anchor="end" font-size="18" fill="rgb(21, 162, 27)">-2.02 x</text>
-<line clip-path="url(#myClip)" x1="0" y1="-723" x2="600" y2="1123" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
-<text x="598" y="100" text-anchor="end" font-size="18" fill="rgb(90, 59, 163)">x - 1</text>
-<line clip-path="url(#myClip)" x1="0" y1="686" x2="600" y2="-229" fill="transparent" stroke="rgb(90, 59, 163)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M -76.991118 171.428571 C -42.664906,171.428571 -17.069551,228.571429 17.256661,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 17.256661 228.571429 C 51.582873,228.571429 77.178229,171.428571 111.504441,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 111.504441 171.428571 C 145.830653,171.428571 171.426008,228.571429 205.752220,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 205.752220 228.571429 C 240.078433,228.571429 265.673788,171.428571 300.000000,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 300.000000 171.428571 C 334.326212,171.428571 359.921567,228.571429 394.247780,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 394.247780 228.571429 C 428.573992,228.571429 454.169347,171.428571 488.495559,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 488.495559 171.428571 C 522.821771,171.428571 548.417127,228.571429 582.743339,228.571429" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 582.743339 228.571429 C 617.069551,228.571429 642.664906,171.428571 676.991118,171.428571" fill="transparent" stroke="rgb(186, 92, 49)" stroke-width="1"/>
+<text x="598" y="80" text-anchor="end" font-size="18" fill="rgb(21, 162, 27)">sin x</text>
+<path clip-path="url(#myClip)" d="M -29.867229 171.428571 C 4.458984,171.428571 30.054339,228.571429 64.380551,228.571429" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 64.380551 228.571429 C 98.706763,228.571429 124.302118,171.428571 158.628331,171.428571" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 158.628331 171.428571 C 192.954543,171.428571 218.549898,228.571429 252.876110,228.571429" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 252.876110 228.571429 C 287.202322,228.571429 312.797678,171.428571 347.123890,171.428571" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 347.123890 171.428571 C 381.450102,171.428571 407.045457,228.571429 441.371669,228.571429" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 441.371669 228.571429 C 475.697882,228.571429 501.293237,171.428571 535.619449,171.428571" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
+<path clip-path="url(#myClip)" d="M 535.619449 171.428571 C 569.945661,171.428571 595.541016,228.571429 629.867229,228.571429" fill="transparent" stroke="rgb(21, 162, 27)" stroke-width="1"/>
+<text x="598" y="100" text-anchor="end" font-size="18" fill="rgb(90, 59, 163)">x + 3</text>
+<line clip-path="url(#myClip)" x1="0" y1="400" x2="600" y2="-171" fill="transparent" stroke="rgb(90, 59, 163)" stroke-width="1"/>
 </svg>
