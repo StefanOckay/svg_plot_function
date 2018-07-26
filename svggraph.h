@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-/**
+/*
 The program expects 0 or 5 arguments. If 0 arguments are specified, a table of functional values at 0, 1, ..., 5 is printed to stdout. If 5 arguments are specified properly(the output .svg file, width and height of the svg plane, x and y axis range), .svg file with plots of functions passed via stdin is created as well. Available functions are: linear with constant coefficient only, linear with linear coefficient only, sin x, cos x.
 */
 
